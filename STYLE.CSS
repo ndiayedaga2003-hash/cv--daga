@@ -1,0 +1,88 @@
+/* ====== STYLE GÉNÉRAL ====== */
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f6fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* ====== CONTAINER PRINCIPAL ====== */
+.cv-container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* ====== EN-TÊTE ====== */
+.cv-header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+}
+.cv-title { margin: 0; font-size: 2em; }
+
+/* ====== CORPS DU CV : DEUX COLONNES (FLEX) ====== */
+.cv-body {
+    display: flex;                /* <- ici : display flex */
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+}
+
+/* ====== PARTIE GAUCHE ====== */
+.cv-left {
+    flex: 0 0 35%;                /* largeur fixe relative : 35% */
+    background-color: #ecf0f1;
+    padding: 25px;
+    border-right: 2px solid #bdc3c7;
+}
+
+/* ====== PARTIE DROITE ====== */
+.cv-right {
+    flex: 1 1 65%;                /* prend le reste : 65% */
+    padding: 25px 35px;
+}
+
+/* ====== TITRES ====== */
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 6px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+/* ====== PHOTO ====== */
+.profile-photo {
+    display: block;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #2980b9;
+    margin: 0 auto 20px;
+}
+
+/* ====== TEXTE & LISTES ====== */
+.contact-info p, p, ul li {
+    margin: 6px 0;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+ul { list-style: none; padding: 0; margin: 0; }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 800px) {
+    .cv-body { flex-direction: column; }
+    .cv-left, .cv-right { flex: none; width: 100%; border: none; }
+    .profile-photo { width: 130px; height: 130px; }
+}
